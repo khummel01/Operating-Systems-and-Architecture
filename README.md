@@ -15,3 +15,13 @@ You may use a button or a joystick instead of one of the sensors.
 You may (should?) use two design boards and switch between them between presentations.
 Look at [Arduino lessons 5-12](https://learn.adafruit.com/series/learn-arduino) for inspiration.
 Present your project in class on Friday and submit your code to the branch project1.
+
+## Final Product
+
+![alt text](https://github.com/khummel01/Operating-Systems-and-Architecture/blob/project1/imgs/project1.JPG)
+
+The temperature and humidity sensor output being displayed on the LCD.
+
+![alt text](https://github.com/khummel01/Operating-Systems-and-Architecture/blob/project1/imgs/project1withlight.JPG)
+
+New text written across the LCD and the green LED light turns on when the photoresistor is covered.
