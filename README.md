@@ -9,3 +9,15 @@ Your Arduino project must include the following:
 You may have one sensor to trigger both motors. You may have both motors connected together or separately.
 
 ## Final Product
+
+![alt text](https://github.com/khummel01/Operating-Systems-and-Architecture/blob/project2/imgs/kevin.JPG)
+
+Kevin looking mischevious. 
+
+![alt text](https://github.com/khummel01/Operating-Systems-and-Architecture/blob/project2/imgs/kevinandkyle.JPG)
+
+Kevin and Kyle posing for a photo op.
+
+![alt text](https://github.com/khummel01/Operating-Systems-and-Architecture/blob/project2/imgs/overview.JPG)
+
+Overview of the breadboard layout
