@@ -10,14 +10,14 @@ You may have one sensor to trigger both motors. You may have both motors connect
 
 ## Final Product
 
-![alt text](https://github.com/khummel01/Operating-Systems-and-Architecture/blob/project2/imgs/kevin.JPG)
+![alt text](https://github.com/khummel01/Operating-Systems-and-Architecture/blob/project2/imgs/kevin.JPG =250x250)
 
 Kevin looking mischevious. 
 
-![alt text](https://github.com/khummel01/Operating-Systems-and-Architecture/blob/project2/imgs/kevinandkyle.JPG)
+![alt text](https://github.com/khummel01/Operating-Systems-and-Architecture/blob/project2/imgs/kevinandkyle.JPG =250x250)
 
 Kevin and Kyle posing for a photo op.
 
-![alt text](https://github.com/khummel01/Operating-Systems-and-Architecture/blob/project2/imgs/overview.JPG)
+![alt text](https://github.com/khummel01/Operating-Systems-and-Architecture/blob/project2/imgs/overview.JPG =250x250)
 
-Overview of the breadboard layout
+Overview of the breadboard layout.
