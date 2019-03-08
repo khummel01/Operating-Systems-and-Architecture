@@ -7,3 +7,5 @@ Your Arduino project must include the following:
 
 **Clarification:**  
 You may have one sensor to trigger both motors. You may have both motors connected together or separately.
+
+## Final Product
