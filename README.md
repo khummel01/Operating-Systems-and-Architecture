@@ -18,10 +18,12 @@ Present your project in class on Friday and submit your code to the branch proje
 
 ## Final Product
 
-![alt text](https://github.com/khummel01/Operating-Systems-and-Architecture/blob/project1/imgs/project1.JPG)
+<img src="(https://github.com/khummel01/Operating-Systems-and-Architecture/blob/project1/imgs/project1.JPG)" alt="Temperature and humidity output on the LCD"
+	title="Temp and humidity output" width="500" height="600" />
 
 The temperature and humidity sensor output being displayed on the LCD.
 
-![alt text](https://github.com/khummel01/Operating-Systems-and-Architecture/blob/project1/imgs/project1withlight.JPG)
+<img src="(https://github.com/khummel01/Operating-Systems-and-Architecture/blob/project1/imgs/project1withlight.JPG)" alt="Photoresistor output on the LCD"
+	title="Photoresistor output" width="500" height="600" />
 
 New text written across the LCD and the green LED light turns on when the photoresistor is covered.
