@@ -20,6 +20,12 @@ Start
 Done
 ```
 
+## Running the program
+Type the following line into a terminal to run the program:
+```bash
+python3 quincunx.py --beans 1000 --bins 11 --start 5 --prob 0.5
+```
+
 ## References
 
 * [Bean machine - Wikipedia](https://en.wikipedia.org/wiki/Bean_machine)
