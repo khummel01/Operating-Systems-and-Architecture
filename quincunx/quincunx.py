@@ -20,7 +20,7 @@ class Board:
     def __init__(self, bins: int):
         """Make a new board of the specified size"""
         self.bins = [0] * bins
-        self.levels = bins-1 # todo: ask about: self._pegs = bins // 2
+        self.levels = bins // 2
 
     def get_num_levels(self):
         return self.levels
@@ -60,48 +60,44 @@ class Bean(threading.Thread):
     Data members: board, current position, probability
     """
 
-    def __init__(self, board: object, bin_num: int, prob: float, name): # todo: ask about lock: object as argument):
+    def __init__(self, board: object, bin_num: int, prob: float, name):
         super().__init__(name=name)
         """Make a new Bean"""
         self.board = board
         self.bin_num = bin_num
         self.prob = prob
 
-    def move_left(self, current_peg_position):
-        """Move a bean left"""
-        # Add bean to new bin
-        self.board[current_peg_position] += 1
-        # Subtract bean from old bin
-        self.board[self.bin_num] -= 1
-        # Reassign bean's location to the new bin
-        self.bin_num = current_peg_position
-
-    def move_right(self, current_peg_position):
+    def move_right(self):
         """Move a bean right"""
         # Add bean to new bin
-        self.board[current_peg_position+1] += 1
+        self.board[self.bin_num+1] += 1
         # Subtract bean from old bin
         self.board[self.bin_num] -= 1
         # Reassign bean's location to the new bin
-        self.bin_num = current_peg_position + 1
+        self.bin_num += 1
+
+    def move_left(self):
+        """Move a bean left"""
+        # Add bean to new bin
+        self.board[self.bin_num-1] += 1
+        # Subtract bean from old bin
+        self.board[self.bin_num] -= 1
+        # Reassign bean's location to the new bin
+        self.bin_num -= 1
 
     def run(self):
         """Run a bean through the pegs"""
-        # Sanity check to make sure threads are running concurrently
+        # Sanity check to make sure threads are running simultaneously
         # print("{} started!".format(self.getName()))
 
-        current_peg_position = 0
-        for i in range(self.board.get_num_levels()-1):
-            if random.random() > self.prob:
-                current_peg_position += 1
+        for i in range(self.board.get_num_levels()):
+            random_num = random.random()
+            if random_num < (1-self.prob)/2:
+                self.move_left()
+            elif random_num < 1-self.prob:
+                self.move_right()
 
-        # We are now at the last level of pegs, we must place the bean in its appropriate bin
-        if random.random() > self.prob:
-            self.move_right(current_peg_position)
-        else:
-            self.move_left(current_peg_position)
-
-        # Sanity check to make sure threads are running concurrently
+        # Sanity check to make sure threads are running simultaneously
         # print("{} finished!".format(self.getName()))
 
     def __str__(self):
