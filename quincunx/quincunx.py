@@ -40,7 +40,7 @@ class Board:
         """Set number of beans in the specified bin"""
         self.bins[idx] = new_value
 
-    def __str__(self): # todo: ask about pos:int as an argument
+    def __str__(self):
         """Print status"""
         bin_status = "|"
         for bin in self.bins:
@@ -87,19 +87,21 @@ class Bean(threading.Thread):
 
     def run(self):
         """Run a bean through the pegs"""
-        # Sanity check
+        # Sanity check to make sure threads are running concurrently
         # print("{} started!".format(self.getName()))
+
         current_peg_position = 0
         for i in range(self.board.get_num_levels()-1):
             if random.random() > self.prob:
                 current_peg_position += 1
 
-        # We are now at the last level, we must place the bean in its appropriate bin
+        # We are now at the last level of pegs, we must place the bean in its appropriate bin
         if random.random() > self.prob:
             self.move_right(current_peg_position)
         else:
             self.move_left(current_peg_position)
-        # Sanity check
+
+        # Sanity check to make sure threads are running concurrently
         # print("{} finished!".format(self.getName()))
 
     def __str__(self):
@@ -110,10 +112,10 @@ def main():
     """Main function"""
     # Parse command-line arguments
     parser = argparse.ArgumentParser(description="Process the arguments.")
-    parser.add_argument("--beans", type=int, help="Number of beans")
-    parser.add_argument("--bins", type=int, help="Number of bins")
-    parser.add_argument("--start", type=int, help="Starting bin number")
-    parser.add_argument("--prob", type=float, help="Probability of a bean moving left or right")
+    parser.add_argument("--beans", type=int, default=1000, help="Number of beans")
+    parser.add_argument("--bins", type=int, default=11, help="Number of bins")
+    parser.add_argument("--start", type=int, default=5, help="Starting bin number")
+    parser.add_argument("--prob", type=float, default=0.5, help="Probability of a bean moving left or right")
     args = parser.parse_args()
 
     print(f"Beans: {args.beans}, bins: {args.bins}, start: {args.start}, prob: {args.prob}")
