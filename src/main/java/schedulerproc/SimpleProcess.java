@@ -1,8 +1,7 @@
-package schedulerproc;
+package main.java.schedulerproc;
 /**
  * @author yasiro01
  */
-import java.util.Comparator;
 
 /**
  * Simple process
@@ -12,14 +11,16 @@ import java.util.Comparator;
  * arrivaltime - time of arrival into the queue (not used)
  */
 public class SimpleProcess {
-    private int nextBurst;
+    private final int nextBurst;
     private final int priority;
     private final int arrivalTime;
+    private int remainingTime; // to be used for Round-Robin scheduling
 
     public SimpleProcess(int nextBurst, int priority, int arrivalTime) {
         this.nextBurst = nextBurst;
         this.priority = priority;
         this.arrivalTime = arrivalTime;
+        this.remainingTime = nextBurst;
     }
 
     public int getNextBurst() {
@@ -34,8 +35,10 @@ public class SimpleProcess {
         return this.arrivalTime;
     }
 
-    public void decrementNextBurst(int rrQuantum) {
-        this.nextBurst -= rrQuantum;
+    public int getRemainingTime() { return this.remainingTime; }
+
+    public void decrementRemainingTime(int rrQuantum) {
+        this.remainingTime -= rrQuantum;
     }
 
     public String toString(){

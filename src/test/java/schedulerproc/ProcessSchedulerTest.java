@@ -1,4 +1,4 @@
-package schedulerproc;
+package test.java.schedulerproc;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -6,7 +6,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import org.junit.Ignore;
+
+import main.java.schedulerproc.ProcessScheduler;
+import main.java.schedulerproc.SimpleProcess;
 
 /**
  *

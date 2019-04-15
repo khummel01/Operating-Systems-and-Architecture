@@ -1,4 +1,4 @@
-package schedulerproc;
+package main.java.schedulerproc;
 /**
  * @author yasiro01
  */
@@ -110,10 +110,10 @@ public class ProcessScheduler {
             }
 
             // Update the time when the next process will start
-            if (currentProcess.getNextBurst() <= this.rrQuantum) {
-                timePassed += currentProcess.getNextBurst();
+            if (currentProcess.getRemainingTime() <= this.rrQuantum) {
+                timePassed += currentProcess.getRemainingTime();
             } else {
-                currentProcess.decrementNextBurst(this.rrQuantum);
+                currentProcess.decrementRemainingTime(this.rrQuantum);
                 timePassed += this.rrQuantum;
                 this.readyQueue.add(currentProcess);
             }
