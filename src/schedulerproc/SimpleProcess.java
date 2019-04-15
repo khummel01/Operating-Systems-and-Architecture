@@ -12,7 +12,7 @@ import java.util.Comparator;
  * arrivaltime - time of arrival into the queue (not used)
  */
 public class SimpleProcess {
-    private final int nextBurst;
+    private int nextBurst;
     private final int priority;
     private final int arrivalTime;
 
@@ -32,5 +32,18 @@ public class SimpleProcess {
 
     public int getArrivalTime() {
         return this.arrivalTime;
+    }
+
+    public void decrementNextBurst(int rrQuantum) {
+        this.nextBurst -= rrQuantum;
+    }
+
+    public String toString(){
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Next Burst: ");
+        stringBuilder.append(this.nextBurst);
+        stringBuilder.append(" Priority: ");
+        stringBuilder.append(this.priority);
+        return stringBuilder.toString();
     }
 }
