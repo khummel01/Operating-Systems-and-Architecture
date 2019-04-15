@@ -109,16 +109,17 @@ public class ProcessScheduler {
                 processWaitTimes.put(currentProcess, processWaitTimes.get(currentProcess)+(timePassed-leftOffTime.get(currentProcess)));
             }
 
-            // Update when the time when the next process will start, remember when this process finished
+            // Update the time when the next process will start
             if (currentProcess.getNextBurst() <= this.rrQuantum) {
                 timePassed += currentProcess.getNextBurst();
-                leftOffTime.put(currentProcess, timePassed);
             } else {
                 currentProcess.decrementNextBurst(this.rrQuantum);
                 timePassed += this.rrQuantum;
-                leftOffTime.put(currentProcess, timePassed);
                 this.readyQueue.add(currentProcess);
             }
+
+            // Remember when this process finished
+            leftOffTime.put(currentProcess, timePassed);
 
             // We're done once we've reached the end of the list
             if (listIdx == this.readyQueue.size()-1) {
