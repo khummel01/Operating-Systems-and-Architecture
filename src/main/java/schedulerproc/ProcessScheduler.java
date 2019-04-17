@@ -94,12 +94,10 @@ public class ProcessScheduler {
         HashMap<SimpleProcess, Integer> leftOffTime = new HashMap<>();
 
         int timePassed = 0;
-        int listIdx = 0;
-        boolean done = false;
 
-        while (!done) {
+        while (!this.readyQueue.isEmpty()) {
             // Get next process
-            SimpleProcess currentProcess = this.readyQueue.get(listIdx);
+            SimpleProcess currentProcess = this.readyQueue.get(0);
 
             // Update the wait time of this process
             if (!processWaitTimes.containsKey(currentProcess)) {
@@ -121,12 +119,10 @@ public class ProcessScheduler {
             // Remember when this process finished
             leftOffTime.put(currentProcess, timePassed);
 
-            // We're done once we've reached the end of the list
-            if (listIdx == this.readyQueue.size()-1) {
-                done = true;
-            }
-            listIdx++;
+            // Pop current process from readyQueue
+            this.readyQueue.remove(0);
         }
+
         // Sum all the wait times
         float sum = 0;
         for (int waitTime : processWaitTimes.values()) {
