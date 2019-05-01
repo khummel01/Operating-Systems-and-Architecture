@@ -1,4 +1,4 @@
-package schedulermem;
+package test.java.schedulermem;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -12,7 +12,7 @@ import org.junit.runners.Suite;
  * @author yasiro01
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({schedulermem.SimplePageTest.class, schedulermem.MemorySchedulerTest.class})
+@Suite.SuiteClasses({test.java.schedulermem.SimplePageTest.class, test.java.schedulermem.MemorySchedulerTest.class})
 public class SchedulermemSuite {
 
     @BeforeClass

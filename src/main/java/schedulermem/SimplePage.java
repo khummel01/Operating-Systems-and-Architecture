@@ -1,4 +1,4 @@
-package schedulermem;
+package main.java.schedulermem;
 
 /**
  * @author [name]

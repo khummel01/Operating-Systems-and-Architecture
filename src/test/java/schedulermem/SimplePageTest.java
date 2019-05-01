@@ -1,5 +1,6 @@
-package schedulermem;
+package test.java.schedulermem;
 
+import main.java.schedulermem.SimplePage;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
