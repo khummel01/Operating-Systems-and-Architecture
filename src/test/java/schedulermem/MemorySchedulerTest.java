@@ -130,8 +130,8 @@ public class MemorySchedulerTest {
         instance3.useOPT(referenceString);
         instance4.useOPT(referenceString);
 
-        int hw10q6 = 0;  // replace with the answer to the question 6 of the the homework 10
-        int hw10q7 = 0;  // replace with the answer to the question 7 of the the homework 10
+        int hw10q6 = 11;  // replace with the answer to the question 6 of the the homework 10
+        int hw10q7 = 10;  // replace with the answer to the question 7 of the the homework 10
 
         assertEquals(hw10q6, instance3.getPageFaultCount());
         assertEquals(hw10q7, instance4.getPageFaultCount());
@@ -163,8 +163,8 @@ public class MemorySchedulerTest {
         instance3.useLRU(referenceString);
         instance4.useLRU(referenceString);
 
-        int hw10q8 = 0;  // replace with the answer to the question 8 of the the homework 10
-        int hw10q9 = 0;  // replace with the answer to the question 9 of the the homework 10
+        int hw10q8 = 13;  // replace with the answer to the question 8 of the the homework 10
+        int hw10q9 = 12;  // replace with the answer to the question 9 of the the homework 10
 
         assertEquals(hw10q8, instance3.getPageFaultCount());
         assertEquals(hw10q9, instance4.getPageFaultCount());

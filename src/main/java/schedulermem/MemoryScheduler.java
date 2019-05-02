@@ -1,9 +1,8 @@
 package main.java.schedulermem;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
-/**
+/*
  * @author Katie Hummel
  */
 public class MemoryScheduler {
@@ -35,15 +34,15 @@ public class MemoryScheduler {
     }
 
     public String getFurthestPage(ArrayList pageSubList, ArrayList pagesInMemory) {
-        HashMap<String,Integer> pageIdxMap = new HashMap<>();
+        HashMap<String,Integer> firstPageOccurance = new HashMap<>();
         for (Object page : pagesInMemory) {
             if (!pageSubList.contains(page)) {
-                pageIdxMap.put((String) page,Integer.MAX_VALUE);
+                firstPageOccurance.put((String) page,Integer.MAX_VALUE);
             } else {
-                pageIdxMap.put((String) page, pageSubList.indexOf(page));
+                firstPageOccurance.put((String) page, pageSubList.indexOf(page));
             }
         }
-        return Collections.max(pageIdxMap.entrySet(), Comparator.comparingInt(Map.Entry::getValue)).getKey();
+        return Collections.max(firstPageOccurance.entrySet(), Comparator.comparingInt(Map.Entry::getValue)).getKey();
     }
 
     public void useOPT(String referenceString) {
@@ -61,11 +60,28 @@ public class MemoryScheduler {
                 this.pageFaultCount++;
             }
         }
-
     }
 
     public void useLRU(String referenceString) {
-        throw new UnsupportedOperationException();
+        ArrayList<String> pagesInMemory = new ArrayList<>();
+        String[] pages = referenceString.split(",");
+        HashMap<String,Integer> counterMap = new HashMap<>();
+
+        int counter = 1;
+        for (String page : pages) {
+            if (!pagesInMemory.contains(page)) {
+                if (pagesInMemory.size() < this.frames) {
+                  pagesInMemory.add(page);
+                } else {
+                    String pageToReplace = Collections.min(counterMap.entrySet(), Comparator.comparingInt(Map.Entry::getValue)).getKey();
+                    pagesInMemory.set(pagesInMemory.indexOf(pageToReplace), page);
+                    counterMap.remove(pageToReplace);
+                }
+                this.pageFaultCount++;
+            }
+            counterMap.put(page, counter);
+            counter++;
+        }
     }
 
 }
