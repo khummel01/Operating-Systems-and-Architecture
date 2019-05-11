@@ -1,0 +1,3 @@
+source finalProject/env/bin/activate
+cd finalProject/assistant-sdk-python/google-assistant-sdk/googlesamples/assistant/library
+python hotword.py --project-id final-project-d8ae9 

@@ -1,0 +1,268 @@
+{
+    "manifest": {
+        "displayName": "Display Image",
+        "invocationName": "Display Image",
+        "category": "PRODUCTIVITY"
+    },
+    "actions": [
+        {
+            "name": "DisplayImage",
+            "availability": {
+                "deviceClasses": [
+                    {
+                        "assistantSdkDevice": {}
+                    }
+                ]
+            },
+            "intent": {
+                "name": "com.example.intents.DisplayImage",
+                "parameters": [
+                  {
+                      "name":"image",
+                      "type":"Image"
+                  }
+                ],
+                "trigger": {
+                    "queryPatterns": [
+                        "Draw a $Image:image",
+                        "$Image:image screen",
+                        "Draw $Image:image"
+                    ]
+                }
+            },
+            "fulfillment": {
+                "staticFulfillment": {
+                    "templatedResponse": {
+                        "items": [
+                            {
+                                "simpleResponse": {
+                                    "textToSpeech": "Here you go"
+                                }
+                            },
+                            {
+                                "deviceExecution": {
+                                    "command": "DisplayImage",
+                                    "params": {
+                                      "image":"$image"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "DisplayCategories",
+            "availability": {
+                "deviceClasses": [
+                    {
+                        "assistantSdkDevice": {}
+                    }
+                ]
+            },
+            "intent": {
+                "name": "com.example.intents.DisplayCategories",
+                "trigger": {
+                    "queryPatterns": [
+                        "What can you draw?"
+                    ]
+                }
+            },
+            "fulfillment": {
+                "staticFulfillment": {
+                    "templatedResponse": {
+                        "items": [
+                            {
+                                "simpleResponse": {
+                                    "textToSpeech": "I can draw a few characters, animals, logos, food, and Roman. Don't get picky!"
+                                }
+                            },
+                            {
+                                "deviceExecution": {
+                                    "command": "DisplayCategories"
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "DisplayRandomImage",
+            "availability": {
+                "deviceClasses": [
+                    {
+                        "assistantSdkDevice": {}
+                    }
+                ]
+            },
+            "intent": {
+                "name": "com.example.intents.DisplayRandomImage",
+                "trigger": {
+                    "queryPatterns": [
+                        "Draw a random image"
+                    ]
+                }
+            },
+            "fulfillment": {
+                "staticFulfillment": {
+                    "templatedResponse": {
+                        "items": [
+                            {
+                                "simpleResponse": {
+                                    "textToSpeech": "Here is your random image"
+                                }
+                            },
+                            {
+                                "deviceExecution": {
+                                    "command": "DisplayRandomImage"
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ],
+    "types": [
+      {
+          "name":"$Image",
+          "entities": [
+            {
+              "key":"CLEAR",
+              "synonyms": [
+                "blank",
+                "clear"
+              ]
+            },
+            {
+              "key":"cat",
+              "synonyms": [
+                "cat",
+                "kitty"
+              ]
+            },
+            {
+              "key":"dinosaur",
+              "synonyms": [
+                "dinosaur",
+		            "dino"
+              ]
+            },
+            {
+              "key":"dog",
+              "synonyms": [
+                "dog",
+                "puppy"
+              ]
+            },
+            {
+              "key":"norse_panda",
+              "synonyms": [
+                "norse panda",
+                "panda"
+              ]
+            },
+            {
+              "key":"whale",
+              "synonyms": [
+                "whale"
+              ]
+            },
+            {
+              "key":"norse",
+              "synonyms": [
+                "luther college",
+                "luther"
+              ]
+            },
+            {
+              "key":"jimmy_johns",
+              "synonyms": [
+                "Jimmy John's"
+              ]
+            },
+            {
+              "key":"octocat",
+              "synonyms": [
+                "github",
+                "octocat"
+              ]
+            },
+            {
+              "key":"python",
+              "synonyms": [
+                "python"
+              ]
+            },
+            {
+              "key":"android",
+              "synonyms": [
+                "android"
+              ]
+            },
+            {
+              "key":"pizza",
+              "synonyms": [
+                "pizza"
+              ]
+            },
+            {
+              "key":"taco",
+              "synonyms": [
+                "taco"
+              ]
+            },
+            {
+              "key":"ice_cream",
+              "synonyms": [
+                "ice cream"
+              ]
+            },
+            {
+              "key":"burger",
+              "synonyms": [
+                "burger"
+              ]
+            },
+            {
+              "key":"apple",
+              "synonyms": [
+                "apple"
+              ]
+            },
+            {
+              "key":"pacman",
+              "synonyms": [
+                "Pac-Man"
+              ]
+            },
+            {
+              "key":"kirby",
+              "synonyms": [
+                "Kirby"
+              ]
+            },
+            {
+              "key":"game_and_watch",
+              "synonyms": [
+                "game and watch"
+              ]
+            },
+            {
+              "key":"mushroom",
+              "synonyms": [
+                "mushroom"
+              ]
+            },
+            {
+              "key":"pikachu",
+              "synonyms": [
+                "pikachu"
+              ]
+            }
+          ]
+      }
+    ]
+  }
