@@ -1,4 +1,4 @@
-package schedulerdisk;
+package main.java.schedulerdisk;
 
 import java.util.Comparator;
 

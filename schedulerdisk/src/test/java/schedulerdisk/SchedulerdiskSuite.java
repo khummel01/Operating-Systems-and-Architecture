@@ -1,4 +1,4 @@
-package schedulerdisk;
+package test.java.schedulerdisk;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -12,7 +12,7 @@ import org.junit.runners.Suite;
  * @author yasiro01
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({schedulerdisk.DiskSchedulerTest.class, schedulerdisk.SimpleRequestTest.class})
+@Suite.SuiteClasses({test.java.schedulerdisk.DiskSchedulerTest.class, test.java.schedulerdisk.SimpleRequestTest.class})
 public class SchedulerdiskSuite {
 
     @BeforeClass

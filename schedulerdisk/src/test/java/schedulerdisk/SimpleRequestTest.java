@@ -1,5 +1,6 @@
-package schedulerdisk;
+package test.java.schedulerdisk;
 
+import main.java.schedulerdisk.SimpleRequest;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
