@@ -83,7 +83,7 @@ public class DiskSchedulerTest {
         instance5000.useFCFS(requestQueue2);
 
         assertEquals(640, instance200.getTotalMoves());
-        assertEquals(7081, instance5000.getTotalMoves()); // expected supposed to be 0??
+        assertEquals(7081, instance5000.getTotalMoves());
     }
 
     /**
