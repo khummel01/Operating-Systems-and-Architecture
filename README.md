@@ -17,3 +17,14 @@ Here's the scoop: the Google Assistant SDK does all of the heavy lifting, while 
 Apart from all of the standard Google issues you'll run into about "account permissions" and the "ownership of your immortal soul", just download all of the files from this repository and install the packages listed in the "requirements.txt" file. From there, you should be able to run "hotword.py" with python, and you'll be off to the proverbial races!
 
 We are not recieving questions or troubleshooting issues with the product at this time.
+
+# The Final Product
+<img src="https://github.com/khummel01/Operating-Systems-and-Architecture/blob/project7/setup_imgs/overview.jpg" alt="Overview of Raspberry Pi and OLED layout with mic"
+	title="Overview" width="600" height="500" />
+  
+Overview of Raspberry Pi and OLED layout with mic
+  
+<img src="https://github.com/khummel01/Operating-Systems-and-Architecture/blob/project7/setup_imgs/cs450officialprof.jpg" alt="CS450 Official Prof"
+	title="CS450 Official Prof" width="500" height="600" />
+  
+CS450 Official Prof
