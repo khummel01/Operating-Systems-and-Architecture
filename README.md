@@ -8,6 +8,10 @@ No, friend, what you need is a simple solution. Something that harkens back to t
 
 Why friend, it's simple! By simply talking into the microphone, you can request any image from our carefully curated library of preselected images, designed to cover all the bases. Simply say "Hey Google, Draw  _____" and it will output it onto the conveniently attached screen. 
 
+If you don't know what you want to draw, you can say, "Hey Google, Draw a random image" and Google will select an image for you to display on the OLED screen. 
+
+If you would like to know all that Google can draw, say, "Hey Google, what can you draw?" and Google will tell you the different categories of images it can draw from. 
+
 ## Tell Me More About All Of The Wonderful Features And Back End Workings Of This Product!
 
 Here's the scoop: the Google Assistant SDK does all of the heavy lifting, while the luma.oled library handles the opening and displaying of files. With this kind of technology we were able to display an astounding 20 different images, with even more options potentially becoming available in the next few decades!
